@@ -17,11 +17,19 @@ namespace VTYSpro
         public Form1()
         {
             InitializeComponent();
+            if (girs.durum)
+            {
+                MessageBox.Show("sisteme bağlandi");
+            }
+            else
+            {
+                MessageBox.Show("sisteme bağlanmadi");
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            if (girs.loginC(Kulanici.Text, pas.Text))
+
+            if (girs.loginC(Kulanici.Text,pas.Text))
             {
                 this.Hide();
                 Form2 form2 = new Form2();
