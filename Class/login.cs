@@ -10,19 +10,22 @@ using MySqlX.XDevAPI.Relational;
 
 namespace VTYSpro.Class
 {
-    internal class login
+     public class Login
     {
         private string username;
         private string password;
         private MySqlConnection conn;
 
         public bool durum=false;
+        public string yetki;
 
-        public login()
+        public MySqlConnection bag { get { return conn;} set { conn = value; } }
+
+        public Login()
         {
            
             string connStr = "server=127.0.0.1;uid=root;" +
-                                "pwd=12345;database=pro";
+                                "pwd=12345;database=odev";
             conn = new MySqlConnection(connStr);
             try
             {
@@ -36,10 +39,26 @@ namespace VTYSpro.Class
         }
         public bool loginC(string username, string password)
         {
-            string sql = "SELECT exName,exPes FROM executive where exName='"+username+"'and exPes="+ password;
+            string sql = "SELECT kullaniciAdi,kullaniciPas,kullaniciYetki FROM kullanici where kullaniciAdi='" + username+ "' and kullaniciPas='" + password+"'";
             MySqlCommand cmd = new MySqlCommand(sql,conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
-            return rdr.Read();
+            if(rdr.Read())
+            {   
+                yetki = rdr.GetString(2);
+                rdr.Close();
+                durum = true;
+                return true;
+            }
+            else
+            {
+                rdr.Close();
+                durum = false;
+                return false;
+            }
+        }
+        ~Login()
+        {
+            conn.Close();
         }
     }
 }

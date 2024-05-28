@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,14 @@ namespace VTYSpro
 {
     public partial class Form1 : Form
     {
-        login girs = new login();
+        Login giris = new Login();
+        
+
         public Form1()
         {
+            
             InitializeComponent();
-            if (girs.durum)
+            if (giris.durum)
             {
                 MessageBox.Show("sisteme bağlandi");
             }
@@ -28,18 +32,20 @@ namespace VTYSpro
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            Temel deneme = new Temel(giris.bag);
+            deneme.Ekle();
 
-            if (girs.loginC(Kulanici.Text,pas.Text))
-            {
-                this.Hide();
-                Form2 form2 = new Form2();
-                Form form1 = this;
-                form2.Show();
-            }
-            else
-            {
-                MessageBox.Show("giriş yapılamadı");
-            }
+            /*
+                        if (giris.loginC(Kulanici.Text,pas.Text))
+                        {
+                            this.Hide();
+                            Form2 form2 = new Form2(giris);
+                            form2.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("giriş yapılamadı");
+                        }*/
         }
     }
 }
