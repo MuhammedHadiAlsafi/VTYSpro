@@ -32,20 +32,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.sirketRB = new System.Windows.Forms.RadioButton();
+            this.oyunRB = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.var5 = new System.Windows.Forms.ComboBox();
+            this.Kazanan = new System.Windows.Forms.RadioButton();
+            this.var6 = new System.Windows.Forms.ComboBox();
+            this.Aday = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.var4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.var3 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.var2 = new System.Windows.Forms.ComboBox();
+            this.var1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -59,38 +61,41 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Kaydet";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(3, 77);
+            this.label1.Location = new System.Drawing.Point(3, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 16);
+            this.label1.Size = new System.Drawing.Size(61, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Oyun türü";
+            this.label1.Text = "Oyun Adı";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(3, 29);
+            this.label2.Location = new System.Drawing.Point(3, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 32);
+            this.label2.Size = new System.Drawing.Size(68, 16);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Oyun adı\r\n\r\n";
+            this.label2.Text = "Oyun Türü";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Controls.Add(this.sirketRB);
+            this.panel1.Controls.Add(this.oyunRB);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.var4);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.var3);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.var2);
+            this.panel1.Controls.Add(this.var1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -98,55 +103,103 @@
             this.panel1.Size = new System.Drawing.Size(396, 391);
             this.panel1.TabIndex = 3;
             // 
-            // comboBox1
+            // sirketRB
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(67, 68);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(315, 24);
-            this.comboBox1.TabIndex = 4;
+            this.sirketRB.AutoSize = true;
+            this.sirketRB.Location = new System.Drawing.Point(320, 3);
+            this.sirketRB.Name = "sirketRB";
+            this.sirketRB.Size = new System.Drawing.Size(62, 20);
+            this.sirketRB.TabIndex = 18;
+            this.sirketRB.Text = "Şirket";
+            this.sirketRB.UseVisualStyleBackColor = true;
+            this.sirketRB.Click += new System.EventHandler(this.sirketRB_Click);
             // 
-            // textBox1
+            // oyunRB
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(315, 22);
-            this.textBox1.TabIndex = 3;
+            this.oyunRB.AutoSize = true;
+            this.oyunRB.Checked = true;
+            this.oyunRB.Location = new System.Drawing.Point(6, 3);
+            this.oyunRB.Name = "oyunRB";
+            this.oyunRB.Size = new System.Drawing.Size(59, 20);
+            this.oyunRB.TabIndex = 17;
+            this.oyunRB.TabStop = true;
+            this.oyunRB.Text = "Oyun";
+            this.oyunRB.UseVisualStyleBackColor = true;
+            this.oyunRB.Click += new System.EventHandler(this.oyunRB_Click);
             // 
-            // label3
+            // groupBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(3, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Oyun Şirketler";
+            this.groupBox1.Controls.Add(this.var5);
+            this.groupBox1.Controls.Add(this.Kazanan);
+            this.groupBox1.Controls.Add(this.var6);
+            this.groupBox1.Controls.Add(this.Aday);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Location = new System.Drawing.Point(0, 263);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(396, 128);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Visible = false;
             // 
-            // comboBox2
+            // var5
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(93, 112);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(289, 24);
-            this.comboBox2.TabIndex = 6;
+            this.var5.FormattingEnabled = true;
+            this.var5.Location = new System.Drawing.Point(93, 20);
+            this.var5.Name = "var5";
+            this.var5.Size = new System.Drawing.Size(289, 24);
+            this.var5.TabIndex = 10;
             // 
-            // label4
+            // Kazanan
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(3, 157);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 16);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Oyun çıkış yılı";
+            this.Kazanan.AutoSize = true;
+            this.Kazanan.Location = new System.Drawing.Point(203, 102);
+            this.Kazanan.Name = "Kazanan";
+            this.Kazanan.Size = new System.Drawing.Size(80, 20);
+            this.Kazanan.TabIndex = 13;
+            this.Kazanan.TabStop = true;
+            this.Kazanan.Text = "Kazanan";
+            this.Kazanan.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // var6
             // 
-            this.textBox2.Location = new System.Drawing.Point(93, 151);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(289, 22);
-            this.textBox2.TabIndex = 8;
+            this.var6.FormattingEnabled = true;
+            this.var6.Location = new System.Drawing.Point(93, 56);
+            this.var6.Name = "var6";
+            this.var6.Size = new System.Drawing.Size(289, 24);
+            this.var6.TabIndex = 11;
+            // 
+            // Aday
+            // 
+            this.Aday.AutoSize = true;
+            this.Aday.Checked = true;
+            this.Aday.Location = new System.Drawing.Point(93, 102);
+            this.Aday.Name = "Aday";
+            this.Aday.Size = new System.Drawing.Size(60, 20);
+            this.Aday.TabIndex = 12;
+            this.Aday.TabStop = true;
+            this.Aday.Text = "Aday";
+            this.Aday.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(41, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(22, 16);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Yıl";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(30, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 16);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Kategori";
             // 
             // checkBox1
             // 
@@ -159,78 +212,66 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // comboBox3
+            // var4
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(93, 20);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(289, 24);
-            this.comboBox3.TabIndex = 10;
+            this.var4.Location = new System.Drawing.Point(99, 172);
+            this.var4.Name = "var4";
+            this.var4.Size = new System.Drawing.Size(283, 22);
+            this.var4.TabIndex = 8;
             // 
-            // comboBox4
+            // label4
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(93, 56);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(289, 24);
-            this.comboBox4.TabIndex = 11;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(3, 175);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 16);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Oyun çıkış yılı";
             // 
-            // radioButton1
+            // var3
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(93, 102);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(60, 20);
-            this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Aday";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.var3.FormattingEnabled = true;
+            this.var3.Items.AddRange(new object[] {
+            "RPG",
+            "FBS",
+            "MMO",
+            "MOBA"});
+            this.var3.Location = new System.Drawing.Point(99, 136);
+            this.var3.Name = "var3";
+            this.var3.Size = new System.Drawing.Size(283, 24);
+            this.var3.TabIndex = 6;
             // 
-            // radioButton2
+            // label3
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(203, 102);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(80, 20);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Kazanan";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(3, 139);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Oyun Şirketi";
             // 
-            // label5
+            // var2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(30, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 16);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Kategori";
+            this.var2.FormattingEnabled = true;
+            this.var2.Items.AddRange(new object[] {
+            "RPG",
+            "MOBA",
+            "FPS",
+            "MMO"});
+            this.var2.Location = new System.Drawing.Point(93, 92);
+            this.var2.Name = "var2";
+            this.var2.Size = new System.Drawing.Size(289, 24);
+            this.var2.TabIndex = 4;
+            this.var2.Text = "  ";
             // 
-            // label6
+            // var1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(41, 59);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(22, 16);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Yıl";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(0, 263);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(396, 128);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Visible = false;
+            this.var1.Location = new System.Drawing.Point(93, 64);
+            this.var1.Name = "var1";
+            this.var1.Size = new System.Drawing.Size(289, 22);
+            this.var1.TabIndex = 3;
             // 
             // Form3
             // 
@@ -255,19 +296,21 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox var1;
+        private System.Windows.Forms.ComboBox var2;
+        private System.Windows.Forms.ComboBox var3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox var4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.RadioButton Kazanan;
+        private System.Windows.Forms.RadioButton Aday;
+        private System.Windows.Forms.ComboBox var6;
+        private System.Windows.Forms.ComboBox var5;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton sirketRB;
+        private System.Windows.Forms.RadioButton oyunRB;
     }
 }

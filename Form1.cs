@@ -19,7 +19,6 @@ namespace VTYSpro
 
         public Form1()
         {
-            
             InitializeComponent();
             if (giris.durum)
             {
@@ -32,10 +31,6 @@ namespace VTYSpro
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Temel deneme = new Temel(giris.bag);
-            deneme.Ekle();
-
-            /*
                         if (giris.loginC(Kulanici.Text,pas.Text))
                         {
                             this.Hide();
@@ -45,7 +40,7 @@ namespace VTYSpro
                         else
                         {
                             MessageBox.Show("giriş yapılamadı");
-                        }*/
+                        }
         }
     }
 }

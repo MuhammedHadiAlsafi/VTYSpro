@@ -19,12 +19,23 @@ namespace VTYSpro.Class
             this.conn = bag;
         }
 
-        public void Ekle(/*string ad, string tur,string sirket,string yil*/)
+        public void Ekle(int tablo,string var1,string var2,string var3,int var4)
         {
-            string sql = "INSERT INTO oyun (`oyunAdi`, `oyunTur`, `oyunYil`, `oyunSirket`) VALUES('dene', 'fe', 2018, 'SIE Santa Monica Studio');";
+            string sql = "call Ekleme("+tablo+",'"+var1+"','"+var2+"','"+var3+ "',"+var4+");";
             MySqlScript script = new MySqlScript(conn, sql);
             script.Execute();
-            
+        }
+        public void Sil(int tablo,string var1)
+        {
+            string sql = "call Ekleme(" + tablo + ",'" + var1 + "');";
+            MySqlScript script = new MySqlScript(conn, sql);
+            script.Execute();
+        }
+        public void Guncelleme(int tablo, string var1)
+        {
+            string sql = "call Ekleme(" + tablo + ",'" + var1 + "');";
+            MySqlScript script = new MySqlScript(conn, sql);
+            script.Execute();
         }
     }
 }
