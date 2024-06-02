@@ -14,30 +14,34 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VTYSpro
 {
-    public partial class Form3 : Form
+    public partial class Form4 : Form
     {
         private Login giris;
         private Temel kod;
         private Tablo ek;
+        private Tablo ek2;
 
-        public Form3(Login a)
+        public Form4(Login a)
         {
             InitializeComponent();
             giris = a;
             kod = new Temel(giris.bag);
-            ek = new Tablo(var3,giris.bag);
+            ek = new Tablo(var3, giris.bag);
+            ek2 = new Tablo(var1, giris.bag);
             DataSet ds = new DataSet();
+            
         }
         
+
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBox1.Checked )
+            if (checkBox1.Checked)
             {
                 groupBox1.Visible = true;
             }
             else
             {
-                groupBox1 .Visible = false;
+                groupBox1.Visible = false;
             }
         }
 
@@ -47,26 +51,24 @@ namespace VTYSpro
             {
                 if (oyunRB.Checked)
                 {
-                    kod.Ekle(1, var1.Text, var2.Text, var3.Text, Convert.ToInt32(var4.Text));
+                    kod.Guncelleme(1, var1.Text, var2.Text, var3.Text, Convert.ToInt32(var4.Text));
                     if (checkBox1.Checked)
                     {
                         if (Aday.Checked)
-                            kod.Ekle(2, var1.Text, var5.Text, "Aday", Convert.ToInt32(var6.Text));
+                            kod.Guncelleme(2, var1.Text, var5.Text, "Aday", Convert.ToInt32(var6.Text));
                         else
-                            kod.Ekle(2, var1.Text, var5.Text, "Kazanan", Convert.ToInt32(var6.Text));
+                            kod.Guncelleme(2, var1.Text, var5.Text, "Kazanan", Convert.ToInt32(var6.Text));
                     }
                 }
                 if (sirketRB.Checked)
                 {
-                    kod.Ekle(3, var1.Text, var2.Text, var3.Text, Convert.ToInt32(var4.Text));
+                    kod.Guncelleme(3, var1.Text, var2.Text, var3.Text, Convert.ToInt32(var4.Text));
                 }
                 MessageBox.Show("İşlem tamamlandı");
-                this.Close();
             }
             catch
             {
                 MessageBox.Show("İşlem yapılamadı \ntüm verileri düzgün girdiğnize emin olun");
-                this.Close();
             }
         }
         private void oyunRB_Click(object sender, EventArgs e)
@@ -88,13 +90,39 @@ namespace VTYSpro
             checkBox1.Visible = false;
             groupBox1.Visible = false;
             ek.Doldur();
-            
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void Form4_Load(object sender, EventArgs e)
         {
             ek.Doldur();
-            var2.SelectedIndex = 0;
+            ek2.Doldur2();
+        }
+
+        private void Sil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (oyunRB.Checked)
+                {
+                    kod.Silme(1, var1.Text);
+                    if (checkBox1.Checked)
+                    {
+                        if (Aday.Checked)
+                            kod.Silme(2, var1.Text);
+                        else
+                            kod.Silme(2, var1.Text);
+                    }
+                }
+                if (sirketRB.Checked)
+                {
+                    kod.Silme(3, var1.Text);
+                }
+                MessageBox.Show("İşlem tamamlandı");
+            }
+            catch
+            {
+                MessageBox.Show("İşlem yapılamadı \ntüm verileri düzgün girdiğnize emin olun");
+            }
         }
     }
 }

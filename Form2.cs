@@ -26,11 +26,13 @@ namespace VTYSpro
             {
                 Ekle.Visible = false;
                 favore.Visible = true;
+                button1.Visible = false;
             }
             else
             {
                 favore.Visible = false;
                 Ekle.Visible = true;
+                button1.Visible = true;
             }
         }
         private void Ekle_Click(object sender, EventArgs e)
@@ -60,6 +62,17 @@ namespace VTYSpro
         {
             tablo.select("favorite");
             TabloAd = "favorite";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form4 form3 = new Form4(giris);
+            form3.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tablo.select2("oyun", textBox1.Text);
         }
     }
 }

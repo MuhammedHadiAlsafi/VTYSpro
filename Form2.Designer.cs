@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.Ekle = new System.Windows.Forms.Button();
             this.favore = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -38,14 +39,18 @@
             this.Sirket = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Veritablo = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Veritablo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Ekle);
             this.panel1.Controls.Add(this.favore);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -56,6 +61,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 620);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 565);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(244, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "GÜNCELLE/SİL";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Ekle
             // 
@@ -124,6 +139,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Location = new System.Drawing.Point(268, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(818, 82);
@@ -144,6 +161,23 @@
             this.Veritablo.Size = new System.Drawing.Size(818, 532);
             this.Veritablo.TabIndex = 2;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(3, 57);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(288, 22);
+            this.textBox1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(324, 59);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -158,6 +192,8 @@
             this.Text = "Form2";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Veritablo)).EndInit();
             this.ResumeLayout(false);
 
@@ -174,5 +210,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button favore;
         private System.Windows.Forms.Button Ekle;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
     }
 }
